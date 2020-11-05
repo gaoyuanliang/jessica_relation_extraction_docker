@@ -1,6 +1,6 @@
 # jessica_relation_extraction_docker 
 
-# relation extraction 
+## relation extraction 
 
 ```bash
 echo "Joe Smith was born in Oregon." > example.txt
@@ -53,7 +53,7 @@ Extracted the following KBP triples:
 1.0	Joe Smith	per:stateorprovince_of_birth	Oregon
 ```
 
-# entity linking
+## entity linking
 
 ```bash
 java -Xmx16g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,entitylink -file example.txt
