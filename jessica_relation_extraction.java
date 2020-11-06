@@ -73,7 +73,7 @@ public class jessica_relation_extraction {
 	    jessica_relation_extraction app = new jessica_relation_extraction();
 		GatewayServer server = new GatewayServer(app);
 		server.start();
-		System.out.print("AdditionApplication started");
+		System.out.print("jessica relation extraction service started");
 	}
 
 }
