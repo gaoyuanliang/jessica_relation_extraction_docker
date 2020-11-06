@@ -1,7 +1,3 @@
-rm jessica_relation_extraction.java
-vi jessica_relation_extraction.java
-i
-
 /////////////jessica_relation_extraction.java////////
 /*
 https://stackoverflow.com/questions/20754129/how-to-call-java-from-python-using-py4j
