@@ -1,4 +1,4 @@
-/////////////jessica_relation_extraction.java/////////////
+/////////////jessica_relation_extraction.java////////
 /*
 https://stackoverflow.com/questions/20754129/how-to-call-java-from-python-using-py4j
 
@@ -77,4 +77,4 @@ public class jessica_relation_extraction {
 	}
 
 }
-/////////////jessica_relation_extraction.java/////////////
+/////////////jessica_relation_extraction.java////////
