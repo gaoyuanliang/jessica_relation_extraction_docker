@@ -10,7 +10,6 @@ os.system(u"""
 gateway = JavaGateway()
 random = gateway.jvm.java.util.Random()
 number1 = random.nextInt(10)
-print(number1)
 
 jessica = gateway.jvm.jessica_relation_extraction('kbp')
 relation = jessica.relation_extraction("Smith's wife is Jessica. Jessica is working for Apple. Jessica is 23 years old.")
