@@ -21,8 +21,17 @@ RUN unzip stanford-corenlp-4.1.0.zip
 RUN mv /stanford-corenlp-4.1.0-models-english-kbp.jar /stanford-corenlp-4.1.0/
 
 WORKDIR /stanford-corenlp-4.1.0/
+
+RUN pip3 install py4j==0.10.9
+
+RUN wget https://repo1.maven.org/maven2/net/sf/py4j/py4j/0.10.7/py4j-0.10.7.jar
+
+RUN echo "gsddngk"
+
 RUN git clone https://github.com/gaoyuanliang/jessica_relation_extraction_docker.git
 RUN mv jessica_relation_extraction_docker/* ./
-RUN jessica_set_classpath.sh
 
+RUN bash jessica_build_java_class.sh
+
+CMD bash
 ##########Dockerfile###########
