@@ -4,17 +4,24 @@
 
 ```bash
 docker pull gaoyuanliang/jessica_relation_extraction:1.0.1
-docker run -it \
-gaoyuanliang/jessica_relation_extraction:1.0.1
+docker run -it gaoyuanliang/jessica_relation_extraction:1.0.1
 ```
 
 ## usage 
 
-```python
-from jessica_relation_extraction import relation_extraction
-
-for r in relation_extraction("Smith's wife is Jessica. Jessica is working for Apple. Jessica is 23 years old."):
-	print(r)
+>>> from jessica_relation_extraction import relation_extraction
+jessica relation extraction service started
+[Thread-2] INFO edu.stanford.nlp.pipeline.StanfordCoreNLP - Adding annotator tokenize
+[Thread-2] INFO edu.stanford.nlp.pipeline.StanfordCoreNLP - Adding annotator kbp
+[Thread-2] INFO edu.stanford.nlp.pipeline.KBPAnnotator - Loading KBP classifier from: edu/stanford/nlp/models/kbp/english/tac-re-lr.ser.gz
+model laoding time: 36 seconds.
+>>> 
+>>> for r in relation_extraction("Smith's wife is Jessica. Jessica is working for Apple. Jessica is 23 years old."):
+...     print(r)
+... 
+{'subject_name': 'Smith', 'subject_type': 'PERSON', 'relation': 'per:spouse', 'object_name': 'Jessica', 'object_type': 'PERSON', 'confidence': '0.539897', 'setence': "Smith's wife is Jessica."}
+{'subject_name': 'Jessica', 'subject_type': 'PERSON', 'relation': 'per:employee_or_member_of', 'object_name': 'Apple', 'object_type': 'ORGANIZATION', 'confidence': '1.000000', 'setence': 'Jessica is working for Apple.'}
+{'subject_name': 'Jessica', 'subject_type': 'PERSON', 'relation': 'per:age', 'object_name': '23 years old', 'object_type': 'DURATION', 'confidence': '1.000000', 'setence': 'Jessica is 23 years old.'}
 ```
 
 ## entity linking
