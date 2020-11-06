@@ -1,3 +1,7 @@
+rm jessica_relation_extraction.java
+vi jessica_relation_extraction.java
+i
+
 /////////////jessica_relation_extraction.java////////
 /*
 https://stackoverflow.com/questions/20754129/how-to-call-java-from-python-using-py4j
@@ -9,7 +13,6 @@ https://nlp.stanford.edu/nlp/javadoc/javanlp/edu/stanford/nlp/pipeline/CoreDocum
 http://manmustbecool.github.io/MyWiki/Wiki/Python/python_java.html
 
 for file in `find . -name "*.jar"`; do export CLASSPATH="$CLASSPATH:`realpath $file`"; done
-
 javac jessica_relation_extraction.java
 jar -cvf jessica_relation_extraction.jar jessica_relation_extraction.class
 
@@ -73,7 +76,7 @@ public class jessica_relation_extraction {
 	    jessica_relation_extraction app = new jessica_relation_extraction();
 		GatewayServer server = new GatewayServer(app);
 		server.start();
-		System.out.print("jessica relation extraction service started");
+		System.out.println("jessica relation extraction service started");
 	}
 
 }
