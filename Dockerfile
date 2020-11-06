@@ -26,7 +26,7 @@ RUN pip3 install py4j==0.10.9
 
 RUN wget https://repo1.maven.org/maven2/net/sf/py4j/py4j/0.10.7/py4j-0.10.7.jar
 
-RUN echo "gsddngk"
+RUN echo "gsgdsewr"
 
 RUN git clone https://github.com/gaoyuanliang/jessica_relation_extraction_docker.git
 RUN mv jessica_relation_extraction_docker/* ./
