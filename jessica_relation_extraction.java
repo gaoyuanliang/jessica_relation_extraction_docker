@@ -1,3 +1,4 @@
+/////////////jessica_relation_extraction.java/////////////
 /*
 https://stackoverflow.com/questions/20754129/how-to-call-java-from-python-using-py4j
 
@@ -11,9 +12,12 @@ for file in `find . -name "*.jar"`; do export CLASSPATH="$CLASSPATH:`realpath $f
 
 javac jessica_relation_extraction.java
 jar -cvf jessica_relation_extraction.jar jessica_relation_extraction.class
+
+java jessica_relation_extraction &
 */
 
 import java.util.*;
+import py4j.GatewayServer;
 import edu.stanford.nlp.io.*;
 import edu.stanford.nlp.ie.util.*;
 import edu.stanford.nlp.pipeline.*;
@@ -23,12 +27,15 @@ public class jessica_relation_extraction {
 	public static StanfordCoreNLP pipeline;
 
 	public jessica_relation_extraction(){
+	}
+
+	public jessica_relation_extraction(String relation_model){
 		long startTime;
 		long elapsedTime;
 
 		startTime = System.nanoTime();
 		Properties props = new Properties();
-		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,depparse,kbp");
+		props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,depparse,"+relation_model);
 		pipeline = new StanfordCoreNLP(props);
 		elapsedTime = System.nanoTime() - startTime;
 		System.out.println("model laoding time: "+ elapsedTime/1000000000 +" seconds.");	
@@ -62,4 +69,12 @@ public class jessica_relation_extraction {
 		return relation_triplets;
 	}
 
+	public static void main(String[] args) {
+	    jessica_relation_extraction app = new jessica_relation_extraction();
+		GatewayServer server = new GatewayServer(app);
+		server.start();
+		System.out.print("AdditionApplication started");
+	}
+
 }
+/////////////jessica_relation_extraction.java/////////////
