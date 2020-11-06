@@ -9,6 +9,7 @@ docker run -it gaoyuanliang/jessica_relation_extraction:1.0.1
 
 ## usage 
 
+```python
 >>> from jessica_relation_extraction import relation_extraction
 jessica relation extraction service started
 [Thread-2] INFO edu.stanford.nlp.pipeline.StanfordCoreNLP - Adding annotator tokenize
