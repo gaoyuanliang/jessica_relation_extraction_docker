@@ -5,6 +5,7 @@
 ```bash
 docker pull gaoyuanliang/jessica_relation_extraction:1.0.1
 docker run -it gaoyuanliang/jessica_relation_extraction:1.0.1
+python3
 ```
 
 ## usage 
