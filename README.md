@@ -30,6 +30,18 @@ model laoding time: 36 seconds.
 {'subject_name': 'Jessica Liang', 'subject_type': 'PERSON', 'subject': '5294656663411692480', 'object_name': 'Heriot - Watt University', 'object_type': 'ORGANIZATION', 'object': '-7927693203698316438', 'relation': 'per:schools_attended'}
 {'subject_name': 'Smith', 'subject_type': 'PERSON', 'subject': '5520747100304772131', 'object_name': 'Jessica Liang', 'object_type': 'PERSON', 'object': '5294656663411692480', 'relation': 'per:spouse'}
 {'subject_name': 'Jessica Liang', 'subject_type': 'PERSON', 'subject': '5294656663411692480', 'object_name': 'Smith', 'object_type': 'PERSON', 'object': '5520747100304772131', 'relation': 'per:spouse'}
+>>> for r in relation_extraction(text):
+...     if r['relation'] == 'mention':
+...             print(r)
+... 
+{'subject_name': 'Jessica Liang works for Group 42 Inc.', 'subject_type': 'SENTENCE', 'subject': '-3679695777525361992', 'relation': 'mention', 'object_name': 'Jessica Liang', 'object_type': 'PERSON', 'object': '5294656663411692480'}
+{'subject_name': 'Jessica Liang works for Group 42 Inc.', 'subject_type': 'SENTENCE', 'subject': '-3679695777525361992', 'relation': 'mention', 'object_name': 'Group 42 Inc.', 'object_type': 'ORGANIZATION', 'object': '-8801252103921655459'}
+{'subject_name': 'She was born in China.', 'subject_type': 'SENTENCE', 'subject': '-3027891050649601944', 'relation': 'mention', 'object_name': 'Jessica Liang', 'object_type': 'PERSON', 'object': '5294656663411692480'}
+{'subject_name': 'She was born in China.', 'subject_type': 'SENTENCE', 'subject': '-3027891050649601944', 'relation': 'mention', 'object_name': 'China', 'object_type': 'COUNTRY', 'object': '7262786698407811651'}
+{'subject_name': 'She studies at Heriot-Watt University.', 'subject_type': 'SENTENCE', 'subject': '-4254305780209262768', 'relation': 'mention', 'object_name': 'Jessica Liang', 'object_type': 'PERSON', 'object': '5294656663411692480'}
+{'subject_name': 'She studies at Heriot-Watt University.', 'subject_type': 'SENTENCE', 'subject': '-4254305780209262768', 'relation': 'mention', 'object_name': 'Heriot - Watt University', 'object_type': 'ORGANIZATION', 'object': '-7927693203698316438'}
+{'subject_name': 'Jessica is married to Smith.', 'subject_type': 'SENTENCE', 'subject': '-5153803059060747347', 'relation': 'mention', 'object_name': 'Smith', 'object_type': 'PERSON', 'object': '5520747100304772131'}
+{'subject_name': 'Jessica is married to Smith.', 'subject_type': 'SENTENCE', 'subject': '-5153803059060747347', 'relation': 'mention', 'object_name': 'Jessica Liang', 'object_type': 'PERSON', 'object': '5294656663411692480'}
 ```
 
 ## entity linking
