@@ -158,5 +158,11 @@ public class jessica_relation_extraction {
 		System.out.println("jessica relation extraction service started");
 	}
 
+	/*
+	public static void main(String[] args) {
+		jessica_relation_extraction app = new jessica_relation_extraction(",coref,kbp");
+	}
+	*/
+
 }
 /////////////jessica_relation_extraction.java////////
