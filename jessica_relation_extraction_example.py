@@ -1,5 +1,13 @@
-
 from jessica_relation_extraction import relation_extraction
 
-for r in relation_extraction("Smith's wife is Jessica. Jessica is working for Apple. Jessica is 23 years old."):
-	print(r)
+text = u"""
+Jessica Liang works for Group 42 Inc. She was born in China. She studies at Heriot-Watt University. Jessica is married to Smith.
+"""
+
+for r in relation_extraction(text):
+	if r['relation'] != 'mention':
+		print(r)
+
+for r in relation_extraction(text):
+	if r['relation'] == 'mention':
+		print(r)
