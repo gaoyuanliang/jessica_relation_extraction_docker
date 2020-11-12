@@ -17,12 +17,19 @@ jessica relation extraction service started
 [Thread-2] INFO edu.stanford.nlp.pipeline.KBPAnnotator - Loading KBP classifier from: edu/stanford/nlp/models/kbp/english/tac-re-lr.ser.gz
 model laoding time: 36 seconds.
 >>> 
->>> for r in relation_extraction("Smith's wife is Jessica. Jessica is working for Apple. Jessica is 23 years old."):
-...     print(r)
+>>> text = u"""
+... Jessica Liang works for Group 42 Inc. She was born in China. She studies at Heriot-Watt University. Jessica is married to Smith.
+... """
+>>> 
+>>> for r in relation_extraction(text):
+...     if r['relation'] != 'mention':
+...             print(r)
 ... 
-{'subject_name': 'Smith', 'subject_type': 'PERSON', 'relation': 'per:spouse', 'object_name': 'Jessica', 'object_type': 'PERSON', 'confidence': '0.539897', 'setence': "Smith's wife is Jessica."}
-{'subject_name': 'Jessica', 'subject_type': 'PERSON', 'relation': 'per:employee_or_member_of', 'object_name': 'Apple', 'object_type': 'ORGANIZATION', 'confidence': '1.000000', 'setence': 'Jessica is working for Apple.'}
-{'subject_name': 'Jessica', 'subject_type': 'PERSON', 'relation': 'per:age', 'object_name': '23 years old', 'object_type': 'DURATION', 'confidence': '1.000000', 'setence': 'Jessica is 23 years old.'}
+{'subject_name': 'Jessica Liang', 'subject_type': 'PERSON', 'subject': '5294656663411692480', 'object_name': 'Group 42 Inc.', 'object_type': 'ORGANIZATION', 'object': '-8801252103921655459', 'relation': 'per:employee_or_member_of'}
+{'subject_name': 'Jessica Liang', 'subject_type': 'PERSON', 'subject': '5294656663411692480', 'object_name': 'China', 'object_type': 'COUNTRY', 'object': '7262786698407811651', 'relation': 'per:country_of_birth'}
+{'subject_name': 'Jessica Liang', 'subject_type': 'PERSON', 'subject': '5294656663411692480', 'object_name': 'Heriot - Watt University', 'object_type': 'ORGANIZATION', 'object': '-7927693203698316438', 'relation': 'per:schools_attended'}
+{'subject_name': 'Smith', 'subject_type': 'PERSON', 'subject': '5520747100304772131', 'object_name': 'Jessica Liang', 'object_type': 'PERSON', 'object': '5294656663411692480', 'relation': 'per:spouse'}
+{'subject_name': 'Jessica Liang', 'subject_type': 'PERSON', 'subject': '5294656663411692480', 'object_name': 'Smith', 'object_type': 'PERSON', 'object': '5520747100304772131', 'relation': 'per:spouse'}
 ```
 
 ## entity linking
