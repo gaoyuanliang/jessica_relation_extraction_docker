@@ -1,7 +1,6 @@
 ##########jessica_relation_extraction.py##########
 import os
 import re
-import eval
 from py4j.java_gateway import JavaGateway
 
 os.system(u"""
