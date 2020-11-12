@@ -53,6 +53,12 @@ while True:
 
 jessica = gateway.jvm.jessica_relation_extraction(',coref,kbp')
 
+def relation_processing(renaltion_name):
+	output = re.sub(r'^.*\:', r'', renaltion_name)
+	output = re.sub(r'[^A-z]+', r'_', output)
+	output = re.sub(r'^[^A-z]+|[^A-z]+$', r'', output)
+	return output
+
 def relation_extraction(text):
 	relations = []
 	######
@@ -126,7 +132,7 @@ def relation_extraction(text):
 			t['object_type'] = r1['object_type']
 			t['object'] = str(hash(object_key))
 		#####
-		t['relation'] = r1["relation"]
+		t['relation'] = relation_processing(r1["relation"])
 		relations.append(t)
 		######and add the subject object metnioned by the sentence
 		t1 = {}
